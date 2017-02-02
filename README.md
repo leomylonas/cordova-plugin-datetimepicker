@@ -1,5 +1,5 @@
-# Cordova Time Picker
-This is a very simple Cordova plugin for Android to utilise the native time picker.
+# Cordova Date & Time Picker
+This is a very simple Cordova plugin for Android to utilise the native date & time pickers.
 
 ### Licence
 This is licenced under Creative Commons 4.0 International (http://creativecommons.org/licenses/by/4.0/)
@@ -20,29 +20,54 @@ Attribution — You **must** give appropriate credit, provide a link to the lice
 
 ### Installation
 ```sh
-$ cordova plugin add https://github.com/leomylonas/cordova-plugin-timepicker.git
+$ cordova plugin add https://github.com/leomylonas/cordova-plugin-datetimepicker.git
 ```
 
 ### Uninstallation
 ```sh
-cordova plugin remove cordova-plugin-timepicker
+cordova plugin remove cordova-plugin-datetimepicker
 ```
 
 ### Usage
 ```JavaScript
 /**
- * Gets the current state of the application
+ * Displays the native TimePicker
  *
- * @param successCallback	- the function to call when the time has been selected
- * @param errorCallback		- the function to call if an error occurs
+ * @param initialHour	     - the default/initial hour (24hr) to pass to the timepicker dialog
+ * @param initialMinute	     - the default/initial minute to pass to the timepicker dialog
+ * @param successCallback    - the function to call when the time has been selected
+ * @param errorCallback      - the function to call if an error occurs
  */
-window.TimePicker.show(packageName, function(time) {
+window.DateTimePicker.showTimePicker(initialHour, initialMinute, packageName, function(time) {
     /*
-    Do something within this callback with the retrieved tim.
+    Do something within this callback with the retrieved time.
     [time] will be an object of the following format:
 	{
         "hour": int,
 		"minute": int
+	}
+    */
+}, function(error) {
+    // do something within this callback if there was an error
+});
+
+/**
+ * Displays the native DatePicker
+ *
+ * @param initialYear	     - the default/initial year to pass to the datepicker dialog
+ * @param initialMonth	     - the default/initial month (n-1) to pass to the datepicker dialog
+ * @param initialDay	     - the default/initial day/date to pass to the datepicker dialog
+ * @param successCallback    - the function to call when the date has been selected
+ * @param errorCallback      - the function to call if an error occurs
+ */
+window.DateTimePicker.showDatePicker(initialHour, initialMinute, packageName, function(date) {
+    /*
+    Do something within this callback with the retrieved date.
+    [date] will be an object of the following format:
+	{
+        "year": int,
+		"month": int,
+		"day": int
 	}
     */
 }, function(error) {

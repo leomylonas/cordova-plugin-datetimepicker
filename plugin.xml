@@ -1,23 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
-        id="cordova-plugin-timepicker"
-		version="0.0.1">
-    <name>Time Picker</name>
-    <description>Time Picker</description>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" id="cordova-plugin-datetimepicker" version="0.0.1">
+    <name>Date and Time Picker</name>
+    <description>Date and Time Picker</description>
 
-    <js-module src="www/TimePicker.js" name="TimePicker">
-        <clobbers target="TimePicker" />
+    <js-module src="www/DateTimePicker.js" name="DateTimePicker">
+        <clobbers target="DateTimePicker" />
     </js-module>
 
     <!-- android -->
     <platform name="android">
         <config-file target="res/xml/config.xml" parent="/*">
-            <feature name="TimePicker">
-                <param name="android-package" value="co.mylonas.cordova.timepicker.TimePicker" />
+            <feature name="DateTimePicker">
+                <param name="android-package" value="co.mylonas.cordova.datetimepicker.DateTimePicker" />
             </feature>
         </config-file>
 
-        <source-file src="src/TimePicker.java" target-dir="src/co/mylonas/cordova/timepicker" />
+        <source-file src="src/DateTimePicker.java" target-dir="src/co/mylonas/cordova/datetimepicker" />
      </platform>
 </plugin>
