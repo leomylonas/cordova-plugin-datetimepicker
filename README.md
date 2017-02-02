@@ -38,7 +38,7 @@ cordova plugin remove cordova-plugin-datetimepicker
  * @param successCallback    - the function to call when the time has been selected
  * @param errorCallback      - the function to call if an error occurs
  */
-window.DateTimePicker.showTimePicker(initialHour, initialMinute, packageName, function(time) {
+window.DateTimePicker.showTimePicker(initialHour, initialMinute, function(time) {
     /*
     Do something within this callback with the retrieved time.
     [time] will be an object of the following format:
@@ -60,7 +60,7 @@ window.DateTimePicker.showTimePicker(initialHour, initialMinute, packageName, fu
  * @param successCallback    - the function to call when the date has been selected
  * @param errorCallback      - the function to call if an error occurs
  */
-window.DateTimePicker.showDatePicker(initialHour, initialMinute, packageName, function(date) {
+window.DateTimePicker.showDatePicker(initialYear, initialMonth, initialDay, function(date) {
     /*
     Do something within this callback with the retrieved date.
     [date] will be an object of the following format:
