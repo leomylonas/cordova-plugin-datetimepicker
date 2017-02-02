@@ -15,7 +15,7 @@ module.exports = {
 	showDatePicker: function(initialYear, initialMonth, initialDay, successCallback, errorCallback) {
 		var now = new Date();
 		initialYear = initialYear || now.getFullYear();
-		initialMonth = initialMonth || now.getDate() + 1;
+		initialMonth = initialMonth || now.getMonth();
 		initialDay = initialDay || now.getDate();
 		errorCallback = errorCallback || this.errorCallback;
         
